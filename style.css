@@ -1,19 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;   
-    background-color: #d9d7ef; 
-    color: #1f252f;
+    background: radial-gradient(circle at center, #2c1b4d 0%, #130b24 100%);
+    color: #e6dff9;
     text-align: center;
     padding: 40px 20px;
     margin: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fundo com poeira estelar sutil */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#f3e794 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 h1 {
-    margin-bottom: 30px;
-    color: #453580;
+    margin-bottom: 40px;
+    font-family: 'Cinzel', serif;
+    color: #f3e794;
+    font-size: 2.2rem;
+    text-shadow: 0 0 15px rgba(243, 231, 148, 0.4);
+    letter-spacing: 1px;
 }
 
 .container {
@@ -21,20 +37,25 @@ h1 {
     justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
-    background: #ffffff;
+    background: linear-gradient(145deg, #221538, #191029);
     border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 10px 20px rgba(31, 37, 47, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(131, 66, 190, 0.15);
     width: 180px;
-    transition: transform 0.2s;
-    border: 1px solid #d9d7ef; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #57449a;
+    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(131, 66, 190, 0.3), inset 0 0 20px rgba(243, 231, 148, 0.2);
+    border-color: #f3e794;
 }
 
 .card img {
@@ -42,58 +63,63 @@ h1 {
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #57449a; 
+    border: 3px solid #f3e794;
+    box-shadow: 0 0 15px rgba(243, 231, 148, 0.3);
     margin-bottom: 10px;
 }
 
 .card h3 {
     margin: 10px 0;
     font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    color: #f3e794;
 }
 
 .contador {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 600;
     margin: 15px 0;
-    color: #1f252f;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(131, 66, 190, 0.5);
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
 }
 
 button {
     padding: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     border: none;
     border-radius: 12px;
     width: 100%;
     margin-bottom: 8px;
     transition: all 0.2s;
-    
 }
 
 .btn-add {
-    background-color: #8342be; 
+    background: linear-gradient(135deg, #7b3fe4, #57449a);
     color: white;
+    box-shadow: 0 4px 15px rgba(123, 63, 228,.4);
 }
 
 .btn-add:hover {
-    background-color: #753bac; 
+    background: linear-gradient(135deg, #8b50f6, #6550b0);
+    box-shadow: 0 6px 20px rgba(123, 63, 228,.6);
 }
 
 .btn-reset {
-    background-color: #d9d7ef; 
-    color: #57449a;
+    background-color: transparent;
+    color: #bfaee3;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border: 1px solid #57449a;
 }
 
 .btn-reset:hover {
-    background-color: #1f252f; 
-    color: white;
+    background-color: #38245c;
+    color: #f3e794;
+    border-color: #f3e794;
 }
 
 button:active {
