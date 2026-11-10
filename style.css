@@ -123,6 +123,93 @@ button {
     border-color: #f3e794;
 }
 
+/* Botão de tirar 1 (-1) */
+.btn-sub {
+    background-color: rgba(123, 63, 228, 0.15);
+    color: #d1c4e9;
+    font-size: 0.75rem;
+    border: 1px dashed #7b3fe4;
+}
+
+.btn-sub:hover {
+    background-color: rgba(239, 83, 80, 0.2);
+    color: #ff8a80;
+    border-color: #ef5350;
+}
+
+/* Seção de Conferência (Rodapé) */
+.conferencia-section {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(87, 68, 154, 0.4);
+}
+
+.conferencia-section h2 {
+    font-family: 'Cinzel', serif;
+    color: #f3e794;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(243, 231, 148, 0.3);
+}
+
+.conferencia-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.conf-card {
+    background: linear-gradient(145deg, #1b102b, #12091c);
+    border-radius: 20px;
+    padding: 20px;
+    width: 200px;
+    border: 1px solid #57449a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.conf-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #f3e794;
+    margin-top: 0;
+}
+
+.contador-conf {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.conf-botoes {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.btn-conf-add {
+    background: #7b3fe4;
+    color: white;
+}
+
+.btn-conf-sub {
+    background: #38245c;
+    color: #d1c4e9;
+}
+
+.btn-conf-reset {
+    background: transparent;
+    color: #bfaee3;
+    font-size: 0.7rem;
+    border: 1px solid #57449a;
+    text-transform: uppercase;
+}
+
+.btn-conf-reset:hover {
+    background: #38245c;
+    color: #f3e794;
+}
+
 button:active {
     transform: scale(0.95);
 }
