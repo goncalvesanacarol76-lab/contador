@@ -5,46 +5,32 @@ cards.forEach(card => {
     const display = card.querySelector('.contador');
     const btnAdd = card.querySelector('.btn-add');
     const btnReset = card.querySelector('.btn-reset');
+    const nomeFuncionario = card.querySelector('h3').innerText; 
 
-    let contagem = localStorage.getItem(id) || 0;
-    display.innerText = contagem;
-
-    btnAdd.addEventListener('click', () => {
-        contagem++;
-        display.innerText = contagem;
-        localStorage.setItem(id, contagem); 
-    });
-
-   const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-    const id = card.getAttribute('data-id');
-    const display = card.querySelector('.contador');
-    const btnAdd = card.querySelector('.btn-add');
-    const btnReset = card.querySelector('.btn-reset');
-    const nomeFuncionario = card.querySelector('h3').innerText; // Pega o nome para personalizar o alerta
-
+    // Carrega o valor salvo ou inicia com 0
     let contagem = parseInt(localStorage.getItem(id)) || 0;
     display.innerText = contagem;
 
+    // Botão de incrementar
     btnAdd.addEventListener('click', () => {
         contagem++;
         display.innerText = contagem;
         localStorage.setItem(id, contagem); 
     });
 
+    // Botão de zerar com SweetAlert estilizado para combinar com o tema
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar caixinhas de ${nomeFuncionario}?`,
-            text: "Essa ação não pode ser desfeita!",
+            text: "A energia mística será reiniciada para zero!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#57449a', // Roxo da sua paleta
-            cancelButtonColor: '#1f252f',  // Azul escuro da sua paleta
+            confirmButtonColor: '#7b3fe4', 
+            cancelButtonColor: '#1f252f', 
             confirmButtonText: 'Sim, zerar!',
             cancelButtonText: 'Cancelar',
-            background: '#ffffff',
-            color: '#1f252f'
+            background: '#221538',
+            color: '#e6dff9'
         }).then((result) => {
             if (result.isConfirmed) {
                 contagem = 0;
@@ -52,13 +38,14 @@ cards.forEach(card => {
                 localStorage.setItem(id, contagem);
                 
                 Swal.fire({
-                    title: 'Zerado!',
+                    title: 'Feitiço aplicado!',
                     text: `A contagem de ${nomeFuncionario} voltou para zero.`,
                     icon: 'success',
-                    confirmButtonColor: '#57449a'
+                    confirmButtonColor: '#7b3fe4',
+                    background: '#221538',
+                    color: '#e6dff9'
                 });
             }
         });
     });
-});
 });
