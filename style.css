@@ -213,3 +213,13 @@ button {
 button:active {
     transform: scale(0.95);
 }
+/* Estilo para as fotos dos cards de conferência (igualzinho aos cards de cima) */
+.conf-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f3e794;
+    box-shadow: 0 0 15px rgba(243, 231, 148, 0.3);
+    margin-bottom: 10px;
+}
