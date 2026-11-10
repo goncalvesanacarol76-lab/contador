@@ -28,15 +28,15 @@ cards.forEach(card => {
         }
     });
 
-    // Botão de zerar com SweetAlert estilizado para combinar com o tema
+    // Botão de zerar com SweetAlert estilizado para o tema místico
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar caixinhas de ${nomeFuncionario}?`,
             text: "A energia mística será reiniciada para zero!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#7b3fe4', 
-            cancelButtonColor: '#1f252f', 
+            confirmButtonColor: '#8942f3', 
+            cancelButtonColor: '#140b24', 
             confirmButtonText: 'Sim, zerar!',
             cancelButtonText: 'Cancelar',
             background: '#221538',
@@ -51,7 +51,7 @@ cards.forEach(card => {
                     title: 'Feitiço aplicado!',
                     text: `A contagem de ${nomeFuncionario} voltou para zero.`,
                     icon: 'success',
-                    confirmButtonColor: '#7b3fe4',
+                    confirmButtonColor: '#8942f3',
                     background: '#221538',
                     color: '#e6dff9'
                 });
@@ -94,8 +94,8 @@ confCards.forEach(card => {
             text: "O registro de conferência será reiniciado!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#7b3fe4',
-            cancelButtonColor: '#1f252f',
+            confirmButtonColor: '#8942f3',
+            cancelButtonColor: '#140b24',
             confirmButtonText: 'Sim, zerar!',
             cancelButtonText: 'Cancelar',
             background: '#221538',
@@ -110,7 +110,7 @@ confCards.forEach(card => {
                     title: 'Atualizado!',
                     text: `A contagem de ${nomeConferente} voltou para zero.`,
                     icon: 'success',
-                    confirmButtonColor: '#7b3fe4',
+                    confirmButtonColor: '#8942f3',
                     background: '#221538',
                     color: '#e6dff9'
                 });
