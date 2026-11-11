@@ -206,13 +206,14 @@ button {
 .btn-lote-add {
     flex: 1;
     background: #57449a;
-    color: #f3e794;
+    color: white;
     border: 1px solid #7b3fe4;
     font-size: 0.8rem;
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 0;
     transition: 0.2s;
+    font-family: "Poppins", sans-serif;
 }
 
 .btn-lote-add:hover {
@@ -229,7 +230,6 @@ button {
 }
 
 .conferencia-section h2 {
-    font-family: 'Cinzel', serif;
     color: #f3e794;
     font-size: 1.8rem;
     margin-bottom: 30px;
