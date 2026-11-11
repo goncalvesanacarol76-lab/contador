@@ -10,11 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="pinterest-bg">
-        <iframe src="https://assets.pinterest.com/ext/embed.html?id=232850243226503017" frameborder="0" scrolling="no"></iframe>
-    </div>
-    <!-- Elementos mágicos flutuantes de fundo -->
-    <div class="magic-stars"></div>
+    <!-- Container onde as estrelas brilhantes animadas vão flutuar -->
+    <div id="stars-container"></div>
     <div class="magic-moon"></div>
 
     <header class="main-header">
@@ -108,14 +105,12 @@
     <div class="conferencia-section">
         <h2>🌙 Contagem de Caixinhas Conferidas 🌙</h2>
         <div class="conferencia-container">
-            
             <div class="conf-card" data-id="conf-anacarol">
                 <div class="card-glow"></div>
                 <h3>Ana Carol</h3>
                 <img src="assets/ana-contador.jpeg" alt="Foto da Ana Carol">
                 <div class="contador-conf">0</div>
                 
-                <!-- Campo para inserir valor personalizado -->
                 <div class="input-lote-group">
                     <input type="number" class="input-lote" placeholder="Qtd" min="1">
                     <button class="btn-lote-add">Somar</button>
@@ -134,7 +129,6 @@
                 <img src="assets/jheni.jpg" alt="Foto da Jheni">
                 <div class="contador-conf">0</div>
                 
-                <!-- Campo para inserir valor personalizado -->
                 <div class="input-lote-group">
                     <input type="number" class="input-lote" placeholder="Qtd" min="1">
                     <button class="btn-lote-add">Somar</button>
@@ -146,7 +140,6 @@
                 </div>
                 <button class="btn-conf-reset">Zerar</button>
             </div>
-
         </div>
     </div>
 
