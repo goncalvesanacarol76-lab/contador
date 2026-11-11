@@ -27,11 +27,12 @@ body {
     overflow: hidden;
 }
 
-/* Estilo de cada estrelinha gerada pelo script */
+/* Estilo das estrelas brilhantes animadas */
 .star {
     position: absolute;
     background: #f3e794;
     border-radius: 50%;
+    box-shadow: 0 0 8px #f3e794; /* Deixa a estrela com mais "glow" */
     animation: moveStar linear infinite, twinkle ease-in-out infinite;
 }
 
@@ -40,10 +41,10 @@ body {
         transform: translateY(105vh) scale(0.8);
         opacity: 0;
     }
-    20% {
+    15% {
         opacity: 1;
     }
-    80% {
+    85% {
         opacity: 1;
     }
     100% {
@@ -53,8 +54,8 @@ body {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; filter: drop-shadow(0 0 6px #f3e794); }
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.4); } /* Pisca aumentando e diminuindo o tamanho */
 }
 
 .magic-moon {
