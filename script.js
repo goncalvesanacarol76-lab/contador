@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Espalhadas por toda a largura da tela
         star.style.left = `${Math.random() * 100}vw`;
         
-        // Começam em alturas aleatórias na tela para já nascerem espalhadas (não só embaixo)
+        // Começam em alturas aleatórias na tela para já nascerem espalhadas
         star.style.top = `${Math.random() * 100}vh`;
         
         // Velocidades variadas (de 4 a 10 segundos) para dar o movimento orgânico
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// --- LÓGICA DO CONTADOR ---
+// --- LÓGICA DO CONTADOR (PRODUÇÃO) ---
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
@@ -164,3 +164,51 @@ confCards.forEach(card => {
         });
     });
 });
+
+// --- BOTÃO MESTRE: ZERAR TUDO DE UMA SÓ VEZ (FORA DOS LOOPS) ---
+const btnResetAll = document.getElementById('btn-reset-all');
+
+if (btnResetAll) {
+    btnResetAll.addEventListener('click', () => {
+        Swal.fire({
+            title: 'Deseja lançar o feitiço de limpeza total?',
+            text: "Todos os contadores de produção e conferência voltarão para zero!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#a83232', 
+            cancelButtonColor: '#140b24', 
+            confirmButtonText: 'Sim, zerar tudo!',
+            cancelButtonText: 'Cancelar',
+            background: '#221538',
+            color: '#e6dff9'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // 1. Zera os cards principais de produção
+                cards.forEach(card => {
+                    const id = card.getAttribute('data-id');
+                    const display = card.querySelector('.contador');
+                    localStorage.setItem(id, 0);
+                    display.innerText = 0;
+                });
+
+                // 2. Zera os cards de conferência
+                confCards.forEach(card => {
+                    const id = card.getAttribute('data-id');
+                    const display = card.querySelector('.contador-conf');
+                    localStorage.setItem(id, 0);
+                    display.innerText = 0;
+                });
+
+                // Alerta de sucesso
+                Swal.fire({
+                    title: 'Magia Realizada!',
+                    text: 'Todas as contagens foram reiniciadas.',
+                    icon: 'success',
+                    confirmButtonColor: '#8942f3',
+                    background: '#221538',
+                    color: '#e6dff9'
+                });
+            }
+        });
+    });
+}
