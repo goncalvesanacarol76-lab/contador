@@ -1,18 +1,17 @@
 // --- ANIMAÇÃO DE ESTRELAS NO FUNDO ---
 document.addEventListener("DOMContentLoaded", () => {
     const starsContainer = document.getElementById("stars-container");
-    const numberOfStars = 90; // Aumentado de 35 para 90 estrelas na tela!
+    const numberOfStars = 90; 
 
     for (let i = 0; i < numberOfStars; i++) {
         const star = document.createElement("div");
         star.classList.add("star");
         
-        const size = Math.random() * 3 + 1.5; // Estrelas um pouco maiores (entre 1.5px e 4.5px)
+        const size = Math.random() * 3 + 1.5;
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
         star.style.left = `${Math.random() * 100}vw`;
         
-        // Duração da subida bem mais rápida (agora entre 2s e 5s ao invés de demorar até 13s)
         const duration = Math.random() * 3 + 2; 
         star.style.animationDuration = `${duration}s, ${Math.random() * 1.5 + 1}s`;
         star.style.animationDelay = `${Math.random() * 4}s`;
