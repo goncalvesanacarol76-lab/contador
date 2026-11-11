@@ -1,3 +1,4 @@
+// 1. Lógica dos cards principais de produção
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
@@ -8,18 +9,15 @@ cards.forEach(card => {
     const btnSub = card.querySelector('.btn-sub');
     const nomeFuncionario = card.querySelector('h3').innerText; 
 
-    // Carrega o valor salvo ou inicia com 0
     let contagem = parseInt(localStorage.getItem(id)) || 0;
     display.innerText = contagem;
 
-    // Botão de incrementar
     btnAdd.addEventListener('click', () => {
         contagem++;
         display.innerText = contagem;
         localStorage.setItem(id, contagem); 
     });
 
-    // Botão de diminuir 1 (caso clique duplo)
     btnSub.addEventListener('click', () => {
         if (contagem > 0) {
             contagem--;
@@ -28,7 +26,6 @@ cards.forEach(card => {
         }
     });
 
-    // Botão de zerar com SweetAlert estilizado para o tema místico
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar caixinhas de ${nomeFuncionario}?`,
@@ -60,7 +57,7 @@ cards.forEach(card => {
     });
 });
 
-// Lógica dos painéis de Conferência (Ana Carol e Jheni)
+// 2. Lógica dos painéis de Conferência (Ana Carol e Jheni) com suporte a lote personalizado
 const confCards = document.querySelectorAll('.conf-card');
 
 confCards.forEach(card => {
@@ -69,17 +66,21 @@ confCards.forEach(card => {
     const btnAdd = card.querySelector('.btn-conf-add');
     const btnSub = card.querySelector('.btn-conf-sub');
     const btnReset = card.querySelector('.btn-conf-reset');
+    const inputLote = card.querySelector('.input-lote');
+    const btnLoteAdd = card.querySelector('.btn-lote-add');
     const nomeConferente = card.querySelector('h3').innerText;
 
     let contagemConf = parseInt(localStorage.getItem(id)) || 0;
     display.innerText = contagemConf;
 
+    // Botão +1 normal
     btnAdd.addEventListener('click', () => {
         contagemConf++;
         display.innerText = contagemConf;
         localStorage.setItem(id, contagemConf);
     });
 
+    // Botão -1 normal
     btnSub.addEventListener('click', () => {
         if (contagemConf > 0) {
             contagemConf--;
@@ -88,6 +89,25 @@ confCards.forEach(card => {
         }
     });
 
+    // Somar valor personalizado digitado (ex: 10)
+    btnLoteAdd.addEventListener('click', () => {
+        const valorDigitado = parseInt(inputLote.value);
+        if (!isNaN(valorDigitado) && valorDigitado > 0) {
+            contagemConf += valorDigitado;
+            display.innerText = contagemConf;
+            localStorage.setItem(id, contagemConf);
+            inputLote.value = ''; // Limpa o campo após somar
+        }
+    });
+
+    // Permitir somar também apertando "Enter" no campo de texto
+    inputLote.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            btnLoteAdd.click();
+        }
+    });
+
+    // Zerar contagem de conferência
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar conferências de ${nomeConferente}?`,
