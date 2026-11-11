@@ -1,4 +1,27 @@
-// 1. Lógica dos cards principais de produção
+// --- ANIMAÇÃO DE ESTRELAS NO FUNDO ---
+document.addEventListener("DOMContentLoaded", () => {
+    const starsContainer = document.getElementById("stars-container");
+    const numberOfStars = 35; // Quantidade de pontinhos brilhantes na tela
+
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        
+        // Posição, tamanho e velocidades aleatórias para ficar natural
+        const size = Math.random() * 3 + 1; // entre 1px e 4px
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}vw`;
+        
+        const duration = Math.random() * 8 + 5; // entre 5s e 13s para subir
+        star.style.animationDuration = `${duration}s, ${Math.random() * 3 + 2}s`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        
+        starsContainer.appendChild(star);
+    }
+});
+
+// --- LÓGICA DO CONTADOR ---
 const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
@@ -57,7 +80,7 @@ cards.forEach(card => {
     });
 });
 
-// 2. Lógica dos painéis de Conferência (Ana Carol e Jheni) com suporte a lote personalizado
+// --- LÓGICA DOS PAINÉIS DE CONFERÊNCIA ---
 const confCards = document.querySelectorAll('.conf-card');
 
 confCards.forEach(card => {
@@ -73,14 +96,12 @@ confCards.forEach(card => {
     let contagemConf = parseInt(localStorage.getItem(id)) || 0;
     display.innerText = contagemConf;
 
-    // Botão +1 normal
     btnAdd.addEventListener('click', () => {
         contagemConf++;
         display.innerText = contagemConf;
         localStorage.setItem(id, contagemConf);
     });
 
-    // Botão -1 normal
     btnSub.addEventListener('click', () => {
         if (contagemConf > 0) {
             contagemConf--;
@@ -89,25 +110,22 @@ confCards.forEach(card => {
         }
     });
 
-    // Somar valor personalizado digitado (ex: 10)
     btnLoteAdd.addEventListener('click', () => {
         const valorDigitado = parseInt(inputLote.value);
         if (!isNaN(valorDigitado) && valorDigitado > 0) {
             contagemConf += valorDigitado;
             display.innerText = contagemConf;
             localStorage.setItem(id, contagemConf);
-            inputLote.value = ''; // Limpa o campo após somar
+            inputLote.value = ''; 
         }
     });
 
-    // Permitir somar também apertando "Enter" no campo de texto
     inputLote.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             btnLoteAdd.click();
         }
     });
 
-    // Zerar contagem de conferência
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar conferências de ${nomeConferente}?`,
