@@ -1,20 +1,29 @@
-// --- ANIMAÇÃO DE ESTRELAS NO FUNDO ---
+// --- ANIMAÇÃO DE ESTRELAS FLUIDAS NO FUNDO ---
 document.addEventListener("DOMContentLoaded", () => {
     const starsContainer = document.getElementById("stars-container");
-    const numberOfStars = 90; 
+    const numberOfStars = 100; // Quantidade ideal para preencher a tela toda
 
     for (let i = 0; i < numberOfStars; i++) {
         const star = document.createElement("div");
         star.classList.add("star");
         
-        const size = Math.random() * 3 + 1.5;
+        // Tamanhos variados (algumas menores ao fundo, outras maiores na frente)
+        const size = Math.random() * 3 + 1; 
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
+        
+        // Espalhadas por toda a largura da tela
         star.style.left = `${Math.random() * 100}vw`;
         
-        const duration = Math.random() * 3 + 2; 
-        star.style.animationDuration = `${duration}s, ${Math.random() * 1.5 + 1}s`;
-        star.style.animationDelay = `${Math.random() * 4}s`;
+        // Começam em alturas aleatórias na tela para já nascerem espalhadas (não só embaixo)
+        star.style.top = `${Math.random() * 100}vh`;
+        
+        // Velocidades variadas (de 4 a 10 segundos) para dar o movimento orgânico
+        const duration = Math.random() * 6 + 4; 
+        star.style.animationDuration = `${duration}s, ${Math.random() * 2 + 1}s`;
+        
+        // Atraso aleatório para começarem em momentos diferentes
+        star.style.animationDelay = `-${Math.random() * duration}s`;
         
         starsContainer.appendChild(star);
     }
