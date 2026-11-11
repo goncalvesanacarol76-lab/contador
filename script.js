@@ -60,7 +60,7 @@ cards.forEach(card => {
     btnReset.addEventListener('click', () => {
         Swal.fire({
             title: `Zerar caixinhas de ${nomeFuncionario}?`,
-            text: "A energia mística será reiniciada para zero!",
+            text: "A contagem será reiniciada para zero!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#8942f3', 
@@ -76,7 +76,7 @@ cards.forEach(card => {
                 localStorage.setItem(id, contagem);
                 
                 Swal.fire({
-                    title: 'Feitiço aplicado!',
+                    title: 'Zeradoooo!',
                     text: `A contagem de ${nomeFuncionario} voltou para zero.`,
                     icon: 'success',
                     confirmButtonColor: '#8942f3',
@@ -171,7 +171,7 @@ const btnResetAll = document.getElementById('btn-reset-all');
 if (btnResetAll) {
     btnResetAll.addEventListener('click', () => {
         Swal.fire({
-            title: 'Deseja lançar o feitiço de limpeza total?',
+            title: 'Deseja zerar tudo?',
             text: "Todos os contadores de produção e conferência voltarão para zero!",
             icon: 'warning',
             showCancelButton: true,
