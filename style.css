@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Fundo estelar imersivo e místico com brilhos e símbolos sutis */
 body::before {
     content: "✦     ⋆    ✧     ✦    ⋆    ✧    ✦    ⋆    ✧    ✦    ⋆    ✧";
     position: fixed;
@@ -26,7 +25,6 @@ body::before {
     white-space: pre-wrap;
 }
 
-/* Efeito de Lua mística no canto superior */
 .magic-moon {
     position: fixed;
     top: -50px;
@@ -77,7 +75,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* Cards com visual de tom místico / grimório / cristais */
 .card, .conf-card {
     background: linear-gradient(155deg, rgba(38, 24, 61, 0.95) 0%, rgba(20, 11, 36, 0.98) 100%);
     border-radius: 22px;
@@ -96,7 +93,6 @@ h1 {
     border-color: #f3e794;
 }
 
-/* Moldura e foto das funcionárias com realce de gato místico/bruxa */
 .card img, .conf-card img {
     width: 90px;
     height: 90px;
@@ -142,7 +138,6 @@ button {
     transition: all 0.2s ease;
 }
 
-/* Botão principal de feitiço/adicionar */
 .btn-add, .btn-conf-add {
     background: linear-gradient(135deg, #8942f3, #57449a);
     color: white;
@@ -155,7 +150,6 @@ button {
     box-shadow: 0 6px 22px rgba(137, 66, 243, 0.7);
 }
 
-/* Botão de zerar refinado */
 .btn-reset, .btn-conf-reset {
     background-color: transparent;
     color: #d1c4e9;
@@ -171,7 +165,6 @@ button {
     border-color: #f3e794;
 }
 
-/* Botão de tirar 1 (-1) */
 .btn-sub, .btn-conf-sub {
     background-color: rgba(123, 63, 228, 0.12);
     color: #bfaee3;
@@ -183,6 +176,48 @@ button {
     background-color: rgba(239, 83, 80, 0.2);
     color: #ff8a80;
     border-color: #ef5350;
+}
+
+/* Estilos específicos para o campo de lote nas conferências */
+.input-lote-group {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.input-lote {
+    width: 60px;
+    background: rgba(19, 11, 36, 0.8);
+    border: 1px solid #7b3fe4;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    padding: 6px;
+}
+
+.input-lote:focus {
+    border-color: #f3e794;
+    box-shadow: 0 0 8px rgba(243, 231, 148, 0.4);
+}
+
+.btn-lote-add {
+    flex: 1;
+    background: #57449a;
+    color: #f3e794;
+    border: 1px solid #7b3fe4;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: 0.2s;
+}
+
+.btn-lote-add:hover {
+    background: #7b3fe4;
+    color: #ffffff;
 }
 
 /* Seção de Conferência Estilizada */
