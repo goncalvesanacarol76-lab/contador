@@ -303,3 +303,29 @@ button {
 button:active {
     transform: scale(0.95);
 }
+/* Estilo do Botão Mestre de Zerar Tudo */
+#btn-reset-all {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 280px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #a83232, #6b1d1d);
+    color: #ffcccc;
+    border: 1px solid #ff6b6b;
+    border-radius: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(168, 50, 50, 0.4);
+    transition: all 0.3s ease;
+}
+
+#btn-reset-all:hover {
+    background: linear-gradient(135deg, #c93b3b, #822323);
+    color: #ffffff;
+    border-color: #ff8585;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    transform: translateY(-2px);
+}
