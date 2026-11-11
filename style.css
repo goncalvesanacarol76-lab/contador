@@ -30,7 +30,7 @@ body {
 /* Estilo das estrelas brilhantes animadas */
 .star {
     position: absolute;
-    background: #f3e794;
+    background: white;
     border-radius: 50%;
     box-shadow: 0 0 8px #f3e794; /* Deixa a estrela com mais "glow" */
     animation: moveStar linear infinite, twinkle ease-in-out infinite;
